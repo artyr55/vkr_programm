@@ -7,7 +7,7 @@ import nest
 nest.ResetKernel()
 
 # neurons count
-kol23= 54
+kol23 = 54
 kol4 = 34
 kol5 = 28
 kol6 = 25
@@ -30,11 +30,11 @@ nest.CopyModel('static_synapse','inh',{'weight':  -8.0})
 row23_Glu = int(math.ceil(kol23*l23_Glu)/2)
 row23_Gaba = (kol23 - row23_Glu*2)/2
 sl23_Glu = tp.CreateLayer({'rows': row23_Glu, 'columns': 2, 'layers': 1,
-'elements': 'pyr',
-'center': [0., 0., 4.]})
+                          'elements': 'pyr',
+                          'center': [0., 0., 4.]})
 sl23_Gaba = tp.CreateLayer({'rows': row23_Gaba, 'columns': 2, 'layers': 1,
-'elements': 'in',
-'center': [0.,1.,4.]})
+                          'elements': 'in',
+                          'center': [0.,1.,4.]})
 fig1 = tp.PlotLayer(sl23_Glu, nodesize=10, nodecolor='orange')
 fig2 = tp.PlotLayer(sl23_Gaba, nodesize=10, fig=fig1)
 
@@ -42,11 +42,11 @@ fig2 = tp.PlotLayer(sl23_Gaba, nodesize=10, fig=fig1)
 row4_Glu = int(math.ceil(kol4*l4_GLu)/2)
 row4_Gaba = (kol4 - row4_Glu*2)/2
 sl4_Glu = tp.CreateLayer({'rows': row4_Glu, 'columns': 2, 'layers': 1,
-'elements': 'pyr',
-'center': [0., 0., 3.]})
+                          'elements': 'pyr',
+                          'center': [0., 0., 3.]})
 sl4_Gaba = tp.CreateLayer({'rows': row4_Gaba, 'columns': 2, 'layers': 1,
-'elements': 'in',
-'center': [0., 1., 3.]})
+                          'elements': 'in',
+                          'center': [0., 1., 3.]})
 fig2 = tp.PlotLayer(sl4_Glu, nodesize=10, nodecolor='orange', fig=fig1)
 fig2 = tp.PlotLayer(sl4_Gaba, nodesize=10, fig=fig1)
 
@@ -54,11 +54,11 @@ fig2 = tp.PlotLayer(sl4_Gaba, nodesize=10, fig=fig1)
 row5_Glu = int(math.ceil(kol5*l5_Glu)/2)
 row5_Gaba = (kol5 - row5_Glu*2)/2
 sl5_Glu = tp.CreateLayer({'rows': row5_Glu, 'columns': 2, 'layers': 1,
-'elements': 'pyr',
-'center': [0., 0., 2.]})
+                          'elements': 'pyr',
+                          'center': [0., 0., 2.]})
 sl5_Gaba = tp.CreateLayer({'rows': row5_Gaba, 'columns': 2, 'layers': 1,
-'elements': 'in',
-'center': [0., 1., 2.]})
+                          'elements': 'in',
+                          'center': [0., 1., 2.]})
 fig2 = tp.PlotLayer(sl5_Glu, nodesize=10, nodecolor='orange', fig=fig1)
 fig2 = tp.PlotLayer(sl5_Gaba, nodesize=10, fig=fig1)
 
@@ -66,18 +66,18 @@ fig2 = tp.PlotLayer(sl5_Gaba, nodesize=10, fig=fig1)
 row6_Glu = int(math.ceil(kol6*l6_Glu)/2)
 row6_Gaba = (kol6 - row6_Glu)/2
 sl6_Glu = tp.CreateLayer({'rows': row6_Glu, 'columns': 2, 'layers': 1,
-'elements': 'pyr',
-'center': [0., 0., 1.]})
+                          'elements': 'pyr',
+                          'center': [0., 0., 1.]})
 sl6_Gaba = tp.CreateLayer({'rows': row6_Gaba, 'columns': 2, 'layers': 1,
-'elements': 'in',
-'center': [0., 1., 1.]})
+                          'elements': 'in',
+                          'center': [0., 1., 1.]})
 fig2 = tp.PlotLayer(sl6_Glu, nodesize=10, nodecolor='orange', fig=fig1)
 fig2 = tp.PlotLayer(sl6_Gaba, nodesize=10, fig=fig1)
 
 conndict_inh = {'connection_type': 'divergent',
-'synapse_model': 'inh'}
+                'synapse_model': 'inh'}
 conndict_exc = {'connection_type': 'divergent',
-'synapse_model': 'exc'}
+                'synapse_model': 'exc'}
 
 # exc connect glu:
 tp.ConnectLayers(sl23_Glu, sl23_Gaba,conndict_exc)
